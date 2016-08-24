@@ -152,11 +152,21 @@ namespace maths {
 	};
 
 	// Types for 2D and 3D Matrix
-	// Type for Line (A, B)
+	// CONE INTERSECT TIME
+
+	struct line {
+		union {
+			vec2 n[2];
+			struct {
+				vec2 a;
+				vec2 b;
+			};
+		};
+	};
 
 	bool almost_equal(float x, float y, float error_factor);
 
-	bool check_clockwise(const vec2& a, const vec2& b, const vec2& p);
+	bool check_clockwise(const line& l, const vec2& p);
 
 	vec3 cross_product(const vec3& a, const vec3& b);
 

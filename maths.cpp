@@ -6,8 +6,8 @@ namespace maths {
 		return diff < error_factor;
 	}
 
-	bool check_clockwise(const vec2& a, const vec2& b, const vec2& p) {
-		float d = ((p.x - a.x) * (b.y - a.y)) - ((p.y - a.y) * (b.x - a.x));
+	bool check_clockwise(const line& l, const vec2& p) {
+		float d = ((p.x - l.a.x) * (l.b.y - l.a.y)) - ((p.y - l.a.y) * (l.b.x - l.a.x));
 		return d > 0;
 	}
 

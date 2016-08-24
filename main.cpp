@@ -456,23 +456,37 @@ int main() {
 			ss << output;
 		}
 
-		{
+		{ 
+			/*	....B
+				.../.
+				../..
+				./...
+				A...P	*/
 			maths::vec2 A = maths::vec2{0.f, 0.f};
-			maths::vec2 B = maths::vec2{0.f, 1.f};
-			maths::vec2 P = {0.5f, 0.5f};
+			maths::vec2 B = maths::vec2{1.f, 1.f};
 
-			bool c = maths::check_clockwise(A, B, P);
+			maths::line L = {A, B};
+			maths::vec2 P = {1.f, 0.f};
+
+			bool c = maths::check_clockwise(L, P);
 
 			string output = test_result_debug(test_item++, "check clockwise", c, "true");
 			ss << output;
 		}
 
 		{
+			/*	....B
+				....|
+				..P.|
+				....|
+				....A	*/
 			maths::vec2 A = maths::vec2{0.f, 0.f};
 			maths::vec2 B = maths::vec2{0.f, 1.f};
+
+			maths::line L = {A, B};
 			maths::vec2 P = {-0.5f, 0.5f};
 
-			bool c = !maths::check_clockwise(A, B, P);
+			bool c = !maths::check_clockwise(L, P);
 
 			string output = test_result_debug(test_item++, "check anti-clockwise", c, "true");
 			ss << output;
