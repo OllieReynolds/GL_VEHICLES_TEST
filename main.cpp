@@ -32,7 +32,7 @@ string test_result_debug(int num, const string& check, bool test, const T& v) {
 int main() {
 	{ // Tests for vec2 type
 		std::string test_set{"2D Vector type checks:"};
-		int test_item = 0;
+		int test_item = 1;
 		stringstream ss;
 		ss << test_set << endl << endl;
 
@@ -126,7 +126,7 @@ int main() {
 
 	{ // Tests for vec3 type
 		std::string test_set{"3D Vector type checks:"};
-		int test_item = 0;
+		int test_item = 1;
 		stringstream ss;
 		ss << test_set << endl << endl;
 
@@ -217,7 +217,7 @@ int main() {
 
 	{ // Tests for vec4 type
 		std::string test_set{"4D Vector type checks:"};
-		int test_item = 0;
+		int test_item = 1;
 		stringstream ss;
 		ss << test_set << endl << endl;
 
@@ -310,7 +310,7 @@ int main() {
 
 	{ // Tests for maths operations
 		std::string test_set{"Math operation checks:"};
-		int test_item = 0;
+		int test_item = 1;
 		stringstream ss;
 		ss << test_set << endl << endl;
 
@@ -553,6 +553,57 @@ int main() {
 			bool b = maths::intersections::point_circle(P, C);
 
 			string output = test_result(test_item++, "point outside circle", b == false);
+			ss << output;
+		}
+
+		std::cout << ss.str() << endl;
+	}
+
+	{ // Tests for size
+		std::string test_set{"Type sizes:"};
+		int test_item = 1;
+		stringstream ss;
+		ss << test_set << endl << endl;
+		
+		{
+			bool b = sizeof(maths::vec2) == 8;
+			string output = test_result(test_item++, "sizeof vec2", b);
+			ss << output;
+		}
+
+		{
+			bool b = sizeof(maths::vec3) == 12;
+			string output = test_result(test_item++, "sizeof vec3", b);
+			ss << output;
+		}
+
+		{
+			bool b = sizeof(maths::vec4) == 16;
+			string output = test_result(test_item++, "sizeof vec4", b);
+			ss << output;
+		}
+
+		{
+			bool b = sizeof(maths::mat4) == 64;
+			string output = test_result(test_item++, "sizeof mat4", b);
+			ss << output;
+		}
+
+		{
+			bool b = sizeof(maths::line) == 16;
+			string output = test_result(test_item++, "sizeof line", b);
+			ss << output;
+		}
+
+		{
+			bool b = sizeof(maths::circle) == 12;
+			string output = test_result(test_item++, "sizeof circle", b);
+			ss << output;
+		}
+
+		{
+			bool b = sizeof(maths::segment) == 24;
+			string output = test_result(test_item++, "sizeof segment", b);
 			ss << output;
 		}
 

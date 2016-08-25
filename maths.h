@@ -128,17 +128,8 @@ namespace maths {
 
 		friend std::ostream& operator << (std::ostream& os, const mat4& v) { os << "(" << v.x << ", " << v.y << ", " << v.z << ", " << v.w << ")"; return os; }
 
-		void scale(const vec3& v) { 
-			x.x = v.x; 
-			y.y = v.y; 
-			z.z = v.z; 
-		}
-
-		void translate(const vec3& v) { 
-			z.x = v.x; 
-			z.y = v.y; 
-			z.z = v.z; 
-		}
+		void scale(const vec3& v) { x.x = v.x; y.y = v.y; z.z = v.z; }
+		void translate(const vec3& v) { z.x = v.x; z.y = v.y; z.z = v.z; }
 
 		union {
 			vec4 n[4];
@@ -199,9 +190,6 @@ namespace maths {
 
 	namespace intersections {
 		bool point_circle(const vec2& P, const circle& C);
-		//bool point_circle(const vec2& P, const vec2& o, float r);
-		
-		bool point_segment(const vec2& P, const segment& s);
-		//bool point_segment(const vec2& P, const line& L1, const line& L2);
+		bool point_segment(const vec2& P, const segment& S);
 	}
 }

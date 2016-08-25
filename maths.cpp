@@ -103,12 +103,13 @@ namespace maths {
 			return distance(C.O, P) < C.r;
 		}
 
-		bool point_segment(const vec2& P, const segment& s) {
-			float r = magnitude(s.A - s.O);
+		bool point_segment(const vec2& P, const segment& S) {
+			float r = magnitude(S.A - S.O);
 
 			return
-				point_circle(P, circle{s.O, r}) &&
-				maths::check_clockwise(line{s.O, s.A}, P) && maths::check_anticlockwise(line{s.O, s.B}, P);
+				point_circle(P, circle{S.O, r}) &&
+				maths::check_clockwise(line{S.O, S.A}, P) && 
+				maths::check_anticlockwise(line{S.O, S.B}, P);
 		}
 	}
 }
