@@ -167,6 +167,7 @@ namespace maths {
 	bool almost_equal(float x, float y, float error_factor);
 
 	bool check_clockwise(const line& l, const vec2& p);
+	bool check_anticlockwise(const line& l, const vec2& p);
 
 	vec3 cross_product(const vec3& a, const vec3& b);
 
@@ -190,4 +191,10 @@ namespace maths {
 	vec4 normalise(const vec4& v);
 	
 	mat4 orthographic_matrix(const vec2& resolution, float nZ, float fZ, mat4 m);
+
+	namespace intersections {
+		bool point_circle(const vec2& P, const vec2& o, float r);
+		bool point_segment(const vec2& P, const line& L1, const line& L2);
+	}
+	
 }

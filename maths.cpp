@@ -11,6 +11,10 @@ namespace maths {
 		return d > 0;
 	}
 
+	bool check_anticlockwise(const line& l, const vec2& p) {
+		return !check_clockwise(l, p);
+	}
+
 	vec3 cross_product(const vec3& a, const vec3& b) {
 		return {
 			a.y * b.z - a.z * b.y,
@@ -92,6 +96,24 @@ namespace maths {
 		m.w.y = -resolution.y / resolution.y;
 		m.w.z = -(fZ + nZ) / (fZ - nZ);
 		return m;
+	}
+
+	namespace intersections {
+		bool point_circle(const vec2& P, const vec2& o, float r) {
+			float d = distance(o, P);
+			return d < r;
+		}
+
+
+		bool point_segment(const vec2& P, const line& L1, const line& L2) {
+			float r = magnitude(L1.a - L1.b);
+
+			bool b1 = point_circle(P, L1.a, r);
+			bool b2 = maths::check_clockwise(L1, P);
+			bool b3 = maths::check_anticlockwise(L2, P);
+
+			return b1 && b2 && b3;
+		}
 	}
 }
 
