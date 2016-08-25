@@ -152,16 +152,21 @@ namespace maths {
 	};
 
 	// Types for 2D and 3D Matrix
-	// CONE INTERSECT TIME
 
 	struct line {
-		union {
-			vec2 n[2];
-			struct {
-				vec2 a;
-				vec2 b;
-			};
-		};
+		vec2 A;
+		vec2 B;
+	};
+
+	struct circle {
+		vec2 O;
+		float r;
+	};
+
+	struct segment {
+		vec2 A;
+		vec2 O;
+		vec2 B;
 	};
 
 	bool almost_equal(float x, float y, float error_factor);
@@ -193,8 +198,10 @@ namespace maths {
 	mat4 orthographic_matrix(const vec2& resolution, float nZ, float fZ, mat4 m);
 
 	namespace intersections {
-		bool point_circle(const vec2& P, const vec2& o, float r);
-		bool point_segment(const vec2& P, const line& L1, const line& L2);
+		bool point_circle(const vec2& P, const circle& C);
+		//bool point_circle(const vec2& P, const vec2& o, float r);
+		
+		bool point_segment(const vec2& P, const segment& s);
+		//bool point_segment(const vec2& P, const line& L1, const line& L2);
 	}
-	
 }

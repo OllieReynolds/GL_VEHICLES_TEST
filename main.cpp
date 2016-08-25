@@ -495,48 +495,42 @@ int main() {
 		}
 
 		{
-			/*  L1	   L2
-				B.......B
+			/*  A.......B
 				.\...P./.
 				..\.../..
 				...\./...
-				....A....	*/
+				....O....	*/
 
-			maths::vec2 A1 = maths::vec2{0.f, 0.f};
-			maths::vec2 B1 = maths::vec2{-32.f, 93.f};
-			maths::line L1 = {A1, B1};
+			maths::vec2 A = maths::vec2{-32.f, 93.f};
+			maths::vec2 O = maths::vec2{0.f,  0.f};
+			maths::vec2 B = maths::vec2{32.f, 93.f};
 
-			maths::vec2 A2 = maths::vec2{0.f, 0.f};
-			maths::vec2 B2 = maths::vec2{32.f, 93.f};
-			maths::line L2 = {A2, B2};
+			maths::segment S = {A, O, B};
 
 			maths::vec2 P = {17.5f, 63.f};
 
-			bool b = maths::intersections::point_segment(P, L1, L2);
+			bool b = maths::intersections::point_segment(P, S);
 
 			string output = test_result(test_item++, "point between vectors", b == true);
 			ss << output;
 		}
 
 		{
-			/*  L1	   L2
-				B.......B
+			/*	A.......B
 				.\...../.
 				..\.../..
 				...\./.P.
-				....A....	*/
+				....O....	*/
 
-			maths::vec2 A1 = maths::vec2{0.f, 0.f};
-			maths::vec2 B1 = maths::vec2{-32.f, 93.f};
-			maths::line L1 = {A1, B1};
+			maths::vec2 A = maths::vec2{-32.f, 93.f};
+			maths::vec2 O = maths::vec2{  0.f,  0.f};
+			maths::vec2 B = maths::vec2{ 32.f, 93.f};
 
-			maths::vec2 A2 = maths::vec2{0.f, 0.f};
-			maths::vec2 B2 = maths::vec2{32.f, 93.f};
-			maths::line L2 = {A2, B2};
+			maths::segment S = {A, O, B};
 
 			maths::vec2 P = {44.5f, 63.f};
 
-			bool b = maths::intersections::point_segment(P, L1, L2);
+			bool b = maths::intersections::point_segment(P, S);
 
 			string output = test_result(test_item++, "point outside vectors", b == false);
 			ss << output;
@@ -544,16 +538,20 @@ int main() {
 
 		{
 			maths::vec2 P = {-4.5f, 4.5f};
-			maths::vec2 O = {0.f, 0.f};
-			bool b = maths::intersections::point_circle(P, O, 10.f);
+			maths::circle C = {{0.f, 0.f}, 10.f};
+
+			bool b = maths::intersections::point_circle(P, C);
+
 			string output = test_result(test_item++, "point within circle", b == true);
 			ss << output;
 		}
 
 		{
 			maths::vec2 P = {-4.5f, 4.5f};
-			maths::vec2 O = {0.f, 0.f};
-			bool b = maths::intersections::point_circle(P, O, 6.f);
+			maths::circle C = {{0.f, 0.f}, 6.f};
+
+			bool b = maths::intersections::point_circle(P, C);
+
 			string output = test_result(test_item++, "point outside circle", b == false);
 			ss << output;
 		}

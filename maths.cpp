@@ -7,7 +7,7 @@ namespace maths {
 	}
 
 	bool check_clockwise(const line& l, const vec2& p) {
-		float d = ((p.x - l.a.x) * (l.b.y - l.a.y)) - ((p.y - l.a.y) * (l.b.x - l.a.x));
+		float d = ((p.x - l.A.x) * (l.B.y - l.A.y)) - ((p.y - l.A.y) * (l.B.x - l.A.x));
 		return d > 0;
 	}
 
@@ -99,20 +99,16 @@ namespace maths {
 	}
 
 	namespace intersections {
-		bool point_circle(const vec2& P, const vec2& o, float r) {
-			float d = distance(o, P);
-			return d < r;
+		bool point_circle(const vec2& P, const circle& C) {
+			return distance(C.O, P) < C.r;
 		}
 
+		bool point_segment(const vec2& P, const segment& s) {
+			float r = magnitude(s.A - s.O);
 
-		bool point_segment(const vec2& P, const line& L1, const line& L2) {
-			float r = magnitude(L1.a - L1.b);
-
-			bool b1 = point_circle(P, L1.a, r);
-			bool b2 = maths::check_clockwise(L1, P);
-			bool b3 = maths::check_anticlockwise(L2, P);
-
-			return b1 && b2 && b3;
+			return
+				point_circle(P, circle{s.O, r}) &&
+				maths::check_clockwise(line{s.O, s.A}, P) && maths::check_anticlockwise(line{s.O, s.B}, P);
 		}
 	}
 }
