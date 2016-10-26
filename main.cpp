@@ -43,30 +43,30 @@ int main() {
 			string output = test_result(test_item++, "initialise", a.x == 0.f && a.y == 0.f);
 			ss << output;
 		}
-		 
-		{ 
-			maths::vec2 a = {0.f, 0.f}; 
+
+		{
+			maths::vec2 a = {0.f, 0.f};
 			a += {1.f, 1.f};
 			string output = test_result(test_item++, "instance addition", a.x == 1.f && a.y == 1.f);
 			ss << output;
 		}
 
-		{ 
-			maths::vec2 a = {0.f, 0.f}; 
+		{
+			maths::vec2 a = {0.f, 0.f};
 			a -= {1.f, 1.f};
 			string output = test_result(test_item++, "instance subtraction", a.x == -1.f && a.y == -1.f);
 			ss << output;
 		}
 
-		{ 
-			maths::vec2 a = {2.f, 2.f}; 
+		{
+			maths::vec2 a = {2.f, 2.f};
 			a *= 5.f;
 			string output = test_result(test_item++, "instance scalar (multiply)", a.x == 10.f && a.y == 10.f);
 			ss << output;
 		}
 
-		{ 
-			maths::vec2 a = {10.f, 10.f}; 
+		{
+			maths::vec2 a = {10.f, 10.f};
 			a /= 2.f;
 			string output = test_result(test_item++, "instance scalar (divide)", a.x == 5.f && a.y == 5.f);
 			ss << output;
@@ -85,14 +85,14 @@ int main() {
 		}
 
 		{
-			maths::vec2 a = {0.f, 0.f}; 
+			maths::vec2 a = {0.f, 0.f};
 			maths::vec2 b = {0.f, 0.f};
 			string output = test_result(test_item++, "equality (true)", a == b);
 			ss << output;
 		}
 
 		{
-			maths::vec2 a = {0.f, 0.f}; 
+			maths::vec2 a = {0.f, 0.f};
 			maths::vec2 b = {39.f,-20.f};
 			string output = test_result(test_item++, "equality (false)", a != b);
 			ss << output;
@@ -137,28 +137,28 @@ int main() {
 		}
 
 		{
-			maths::vec3 a = {0.f, 0.f, 0.f}; 
+			maths::vec3 a = {0.f, 0.f, 0.f};
 			a += {1.f, 1.f, 1.f};
 			string output = test_result(test_item++, "instance addition", a.x == 1.f && a.y == 1.f && a.z == 1.f);
 			ss << output;
 		}
 
 		{
-			maths::vec3 a = {0.f, 0.f, 0.f}; 
+			maths::vec3 a = {0.f, 0.f, 0.f};
 			a -= {1.f, 1.f, 1.f};
 			string output = test_result(test_item++, "instance subtraction", a.x == -1.f && a.y == -1.f && a.z == -1.f);
 			ss << output;
 		}
 
 		{
-			maths::vec3 a = {2.f, 2.f, 2.f}; 
+			maths::vec3 a = {2.f, 2.f, 2.f};
 			a *= 5.f;
 			string output = test_result(test_item++, "instance scalar (multiply)", a.x == 10.f && a.y == 10.f && a.z == 10.f);
 			ss << output;
 		}
 
 		{
-			maths::vec3 a = {10.f, 10.f, 10.f}; 
+			maths::vec3 a = {10.f, 10.f, 10.f};
 			a /= 2.f;
 			string output = test_result(test_item++, "instance scalar (divide)", a.x == 5.f && a.y == 5.f && a.z == 5.f);
 			ss << output;
@@ -177,25 +177,25 @@ int main() {
 		}
 
 		{
-			maths::vec3 a = {0.f, 0.f, 0.f}; 
+			maths::vec3 a = {0.f, 0.f, 0.f};
 			string output = test_result(test_item++, "equality (true)", a == maths::vec3{0.f, 0.f, 0.f});
 			ss << output;
 		}
 
 		{
-			maths::vec3 a = {0.f, 0.f, 0.f}; 
+			maths::vec3 a = {0.f, 0.f, 0.f};
 			string output = test_result(test_item++, "equality (false)", a != maths::vec3{39.f, -20.f, 2291038.f});
 			ss << output;
 		}
 
 		{
-			maths::vec3 a = maths::vec3{ 34.4f, -212.9f, 81.f} + maths::vec3{-34.4f,  212.9f, -81.f};
+			maths::vec3 a = maths::vec3{34.4f, -212.9f, 81.f} + maths::vec3{-34.4f,  212.9f, -81.f};
 			string output = test_result(test_item++, "addition", a.x == 0.f && a.y == 0.f && a.z == 0.f);
 			ss << output;
 		}
 
 		{
-			maths::vec3 a = maths::vec3{ 34.4f, -212.9f,  81.f} - maths::vec3{-34.4f,  212.9f, -81.f};
+			maths::vec3 a = maths::vec3{34.4f, -212.9f,  81.f} - maths::vec3{-34.4f,  212.9f, -81.f};
 			string output = test_result(test_item++, "subtraction", a.x == 68.8f && a.y == -425.8f && a.z == 162.f);
 			ss << output;
 		}
@@ -250,7 +250,7 @@ int main() {
 
 		{
 			maths::vec4 a = {10.f, 10.f, 10.f, 10.f};
-			a /= 2.f;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+			a /= 2.f;
 			string output = test_result(test_item++, "instance scalar (divide)", a.x == 5.f && a.y == 5.f && a.z == 5.f && a.w == 5.f);
 			ss << output;
 		}
@@ -315,24 +315,24 @@ int main() {
 		ss << test_set << endl << endl;
 
 		{
-			maths::vec3 a = maths::vec3{ 34.f, -32.f,   192.2f};
+			maths::vec3 a = maths::vec3{34.f, -32.f,   192.2f};
 			maths::vec3 b = maths::vec3{-1.f,  -1000.f, 2.1f};
 			maths::vec3 c = maths::cross_product(a, b);
 
 			string output = test_result_debug(
-				test_item++, 
+				test_item++,
 				"vec3 cross product",
 				{
-					maths::almost_equal(c.x,  192133.f, 0.3f) && 
-					maths::almost_equal(c.y, -263.6f,   0.3f) && 
-				    maths::almost_equal(c.z, -34032.f,  0.3f)
+					maths::almost_equal(c.x,  192133.f, 0.3f) &&
+					maths::almost_equal(c.y, -263.6f,   0.3f) &&
+					maths::almost_equal(c.z, -34032.f,  0.3f)
 				},
 				c
 			); ss << output;
 		}
 
 		{
-			maths::vec2 a = maths::vec2{ 34.f, -32.f};
+			maths::vec2 a = maths::vec2{34.f, -32.f};
 			maths::vec2 b = maths::vec2{-1.f,  -1000.f};
 			float c = maths::dot_product(a, b);
 
@@ -342,7 +342,7 @@ int main() {
 		}
 
 		{
-			maths::vec3 a = maths::vec3{ 34.f, -32.f,   192.2f};
+			maths::vec3 a = maths::vec3{34.f, -32.f, 192.2f};
 			maths::vec3 b = maths::vec3{-1.f,  -1000.f, 2.1f};
 			float c = maths::dot_product(a, b);
 
@@ -352,7 +352,7 @@ int main() {
 		}
 
 		{
-			maths::vec4 a = maths::vec4{ 34.f, -32.f,   192.2f, 47.2f};
+			maths::vec4 a = maths::vec4{34.f, -32.f, 192.2f, 47.2f};
 			maths::vec4 b = maths::vec4{-1.f,  -1000.f, 2.1f,  -212.f};
 			float c = maths::dot_product(a, b);
 
@@ -362,7 +362,7 @@ int main() {
 		}
 
 		{
-			float c = maths::magnitude({34.f, -32.f});
+			float c = maths::magnitude(maths::vec2{34.f, -32.f});
 
 			string output = test_result_debug(
 				test_item++, "vec2 magnitude", maths::almost_equal(c, 46.6905f, 0.3f), c);
@@ -389,12 +389,12 @@ int main() {
 			maths::vec2 c = maths::normalise(maths::vec2{34.f, -32.f});
 
 			string output = test_result_debug(
-				test_item++, 
+				test_item++,
 				"vec2 normalise",
 				{
 					maths::almost_equal(c.x,  0.7282f,   0.3f) &&
 					maths::almost_equal(c.y, -0.685365f, 0.3f)
-				}, 
+				},
 				c
 			);
 			ss << output;
@@ -409,7 +409,7 @@ int main() {
 				{
 					maths::almost_equal(c.x,  0.1719f,   0.3f) &&
 					maths::almost_equal(c.y, -0.161788f, 0.3f) &&
-				    maths::almost_equal(c.z,  0.971738f, 0.3f)
+					maths::almost_equal(c.z,  0.971738f, 0.3f)
 				},
 				c
 			);
@@ -425,8 +425,8 @@ int main() {
 				{
 					maths::almost_equal(c.x,  0.167205f, 0.3f) &&
 					maths::almost_equal(c.y, -0.157369f, 0.3f) &&
-				    maths::almost_equal(c.z,  0.945197f, 0.3f) &&
-				    maths::almost_equal(c.w,  0.232119f, 0.3f)
+					maths::almost_equal(c.z,  0.945197f, 0.3f) &&
+					maths::almost_equal(c.w,  0.232119f, 0.3f)
 				},
 				c
 			);
@@ -456,160 +456,43 @@ int main() {
 			ss << output;
 		}
 
-		{ 
-			/*	....B
-				.../.
-				../..
-				./...
-				A...P	*/
 
-			maths::vec2 A = maths::vec2{0.f, 0.f};
-			maths::vec2 B = maths::vec2{1.f, 1.f};
 
-			maths::line L = {A, B};
-			maths::vec2 P = {1.f, 0.f};
 
-			bool c = maths::check_clockwise(L, P);
+		{ // Tests for size
+			std::string test_set{"Type sizes:"};
+			int test_item = 1;
+			stringstream ss;
+			ss << test_set << endl << endl;
 
-			string output = test_result_debug(test_item++, "check clockwise", c, "true");
-			ss << output;
+			{
+				bool b = sizeof(maths::vec2) == 8;
+				string output = test_result(test_item++, "sizeof vec2", b);
+				ss << output;
+			}
+
+			{
+				bool b = sizeof(maths::vec3) == 12;
+				string output = test_result(test_item++, "sizeof vec3", b);
+				ss << output;
+			}
+
+			{
+				bool b = sizeof(maths::vec4) == 16;
+				string output = test_result(test_item++, "sizeof vec4", b);
+				ss << output;
+			}
+
+			{
+				bool b = sizeof(maths::mat4) == 64;
+				string output = test_result(test_item++, "sizeof mat4", b);
+				ss << output;
+			}
+
+			std::cout << ss.str() << endl;
 		}
 
-		{
-			/*	....B
-				....|
-				..P.|
-				....|
-				....A	*/
-
-			maths::vec2 A = maths::vec2{0.f, 0.f};
-			maths::vec2 B = maths::vec2{0.f, 1.f};
-
-			maths::line L = {A, B};
-			maths::vec2 P = {-0.5f, 0.5f};
-
-			bool c = !maths::check_clockwise(L, P);
-
-			string output = test_result_debug(test_item++, "check anti-clockwise", c, "true");
-			ss << output;
-		}
-
-		{
-			/*  A.......B
-				.\...P./.
-				..\.../..
-				...\./...
-				....O....	*/
-
-			maths::vec2 A = maths::vec2{-32.f, 93.f};
-			maths::vec2 O = maths::vec2{0.f,  0.f};
-			maths::vec2 B = maths::vec2{32.f, 93.f};
-
-			maths::segment S = {A, O, B};
-
-			maths::vec2 P = {17.5f, 63.f};
-
-			bool b = maths::intersections::point_segment(P, S);
-
-			string output = test_result(test_item++, "point between vectors", b == true);
-			ss << output;
-		}
-
-		{
-			/*	A.......B
-				.\...../.
-				..\.../..
-				...\./.P.
-				....O....	*/
-
-			maths::vec2 A = maths::vec2{-32.f, 93.f};
-			maths::vec2 O = maths::vec2{  0.f,  0.f};
-			maths::vec2 B = maths::vec2{ 32.f, 93.f};
-
-			maths::segment S = {A, O, B};
-
-			maths::vec2 P = {44.5f, 63.f};
-
-			bool b = maths::intersections::point_segment(P, S);
-
-			string output = test_result(test_item++, "point outside vectors", b == false);
-			ss << output;
-		}
-
-		{
-			maths::vec2 P = {-4.5f, 4.5f};
-			maths::circle C = {{0.f, 0.f}, 10.f};
-
-			bool b = maths::intersections::point_circle(P, C);
-
-			string output = test_result(test_item++, "point within circle", b == true);
-			ss << output;
-		}
-
-		{
-			maths::vec2 P = {-4.5f, 4.5f};
-			maths::circle C = {{0.f, 0.f}, 6.f};
-
-			bool b = maths::intersections::point_circle(P, C);
-
-			string output = test_result(test_item++, "point outside circle", b == false);
-			ss << output;
-		}
-
-		std::cout << ss.str() << endl;
+		system("pause");
+		return 0;
 	}
-
-	{ // Tests for size
-		std::string test_set{"Type sizes:"};
-		int test_item = 1;
-		stringstream ss;
-		ss << test_set << endl << endl;
-		
-		{
-			bool b = sizeof(maths::vec2) == 8;
-			string output = test_result(test_item++, "sizeof vec2", b);
-			ss << output;
-		}
-
-		{
-			bool b = sizeof(maths::vec3) == 12;
-			string output = test_result(test_item++, "sizeof vec3", b);
-			ss << output;
-		}
-
-		{
-			bool b = sizeof(maths::vec4) == 16;
-			string output = test_result(test_item++, "sizeof vec4", b);
-			ss << output;
-		}
-
-		{
-			bool b = sizeof(maths::mat4) == 64;
-			string output = test_result(test_item++, "sizeof mat4", b);
-			ss << output;
-		}
-
-		{
-			bool b = sizeof(maths::line) == 16;
-			string output = test_result(test_item++, "sizeof line", b);
-			ss << output;
-		}
-
-		{
-			bool b = sizeof(maths::circle) == 12;
-			string output = test_result(test_item++, "sizeof circle", b);
-			ss << output;
-		}
-
-		{
-			bool b = sizeof(maths::segment) == 24;
-			string output = test_result(test_item++, "sizeof segment", b);
-			ss << output;
-		}
-
-		std::cout << ss.str() << endl;
-	}
-
-	system("pause");
-	return 0;
 }
